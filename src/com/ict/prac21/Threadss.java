@@ -1,0 +1,35 @@
+package com.ict.prac21;
+
+
+	// 스레드(일꾼) : 현재 실행중ㅇ인 프로그램 내에서 실행되는 세부 작업 단위
+	// 싱글 스레드  : 스레드가 하나, 일꾼이 하나.
+	// 멀티 스레드  : 스레드가 여러개, 일꾼이 여러개, 병행처리
+	// 자바에서 스레드 생성(일처리) : start() => run()
+	// 1. Thread 클래스 상속 받기 : start(), run() 메서드가 모두 있따.
+	// 2. Runnable 인터페이스 상속 : run() 만 존재. <== 추상메서드
+	// 스레드 생성자 : Thread(), Thread(Runnable 인터페이스를 상속받은 객체)
+	//             Thread(스레드이름), Thread(Runnable 인터페이스를 상속받은 객체, 스레드이름)
+
+public class Threadss {
+	public void play() {
+		System.out.println("2 : " + Thread.currentThread().getName());
+	}
+	public void start() {
+		System.out.println("4 : " + Thread.currentThread().getName());
+	}
+	public static void main(String[] args) {
+		System.out.println("1 : " + Thread.currentThread().getName());
+
+		Threadss test = new Threadss();
+		test.play();
+		System.out.println("3 : " + Thread.currentThread().getName());
+		
+		test.start();
+		System.out.println("5 " + Thread.currentThread().getName());
+		
+		System.out.println("수고링");
+		
+	}
+
+	
+}
